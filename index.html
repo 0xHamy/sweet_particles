@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Particles</title>
+    <style>
+        /* Ensure the parent container is positioned relatively */
+        .particle-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background: #000; 
+        }
+
+        /* Canvas should fill the container */
+        canvas {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0; /* Behind other content */
+        }
+
+        /* Content should be above the canvas */
+        .content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="particle-container" id="particle-container">
+        <canvas id="particle-canvas"></canvas>
+        <div class="content">
+            <h1>Custom Particle System</h1>
+        </div>
+    </div>
+
+    <script src="particles.js"></script>
+    <script>
+        // Initialize the particle system with all specified properties
+        const container = document.getElementById("particle-container");
+        const canvas = document.getElementById("particle-canvas");
+        const particleSystem = new ParticleSystem(canvas, {
+            numParticles: 140, // Amount: Number of particles
+            maxDistance: 220, // Proximity: Max distance for connecting lines
+            particleRadius: 8, // Size of the filled dots
+            particleColor: "rgba(39, 40, 38, 1)", // Color of the dot
+            lineColor: "rgba(245, 178, 6, 1)", // Color of the lines
+            speed: 5, // Speed of particle movement
+            lineType: "solid" // Type of connecting lines: "solid", "dotted", "dashed", "dash-dotted"
+        });
+        particleSystem.start();
+    </script>
+</body>
+</html>
