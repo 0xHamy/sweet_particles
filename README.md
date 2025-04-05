@@ -55,7 +55,7 @@ The particle system is initialized by creating an instance of the `ParticleSyste
 To initialize the particle system, include the `particles.js` script and create a canvas element inside a container. Then, instantiate the `ParticleSystem` class with your desired options.
 
 Example (from [index.html](./index.html)):
-```
+```html
 <script>
     const container = document.getElementById("particle-container");
     const canvas = document.getElementById("particle-canvas");
@@ -110,7 +110,7 @@ CSS for the container:
 To add the particle system to a Bootstrap card, include Bootstrap’s CSS, create a card with a `position: relative` container, and initialize the particle system inside it.
 
 Example:
-```
+```html
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <div class="container my-5">
@@ -144,7 +144,7 @@ Example:
 To add the particle system to a Semantic UI segment, include Semantic UI’s CSS, create a segment with a `position: relative` container, and initialize the particle system inside it.
 
 Example:
-```
+```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
 
 <div class="ui container" style="margin-top: 50px;">
@@ -178,7 +178,7 @@ Example:
 To add the particle system to a navbar (e.g., a Bootstrap navbar), set the navbar as the container and initialize the particle system inside it.
 
 Example:
-```
+```html
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <nav class="navbar navbar-expand-lg navbar-dark particle-container" id="particle-navbar" style="height: 60px;">
@@ -222,14 +222,14 @@ Example:
 The background of the particle system is set via the CSS of the `.particle-container`. You can use a solid color, gradient, or image.
 
 Example with a gradient background:
-```
+```css
 .particle-container {
     background: linear-gradient(45deg, #000, #333);
 }
 ```
 
 Example with an image background:
-```
+```css
 .particle-container {
     background: url('background.jpg') no-repeat center center/cover;
 }
@@ -243,7 +243,7 @@ The `ParticleSystem` class provides the following methods:
 - `stop()`: Stops the particle animation.
 
 Example:
-```
+```js
 const particleSystem = new ParticleSystem(canvas, { /* options */ });
 particleSystem.start(); // Start the animation
 particleSystem.stop();  // Stop the animation
