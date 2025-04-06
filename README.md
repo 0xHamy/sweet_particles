@@ -57,19 +57,20 @@ To initialize the particle system, include the `particles.js` script and create 
 Example (from [index.html](./index.html)):
 ```html
 <script>
-    const container = document.getElementById("particle-container");
-    const canvas = document.getElementById("particle-canvas");
-    const particleSystem = new ParticleSystem(canvas, {
-        numParticles: 100, // Number of particles
-        maxDistance: 200, // Max distance for connecting lines
-        particleRadius: 3, // Size of the filled dots
-        particleColor: "rgba(234, 170, 22, 0.8)", // Color of the dots
-        lineColor: "rgba(255, 255, 255, 0.4)", // Color of the lines
-        speed: 3, // Speed of particle movement
-        lineType: "dashed" // Type of connecting lines
-    });
-    particleSystem.start();
-</script>
+        // Initialize the particle system with all specified properties
+        const container = document.getElementById("particle-container");
+        const canvas = document.getElementById("particle-canvas");
+        const particleSystem = new ParticleSystem(canvas, {
+            numParticles: 140, // Amount: Number of particles
+            maxDistance: 220, // Proximity: Max distance for connecting lines
+            particleRadius: 8, // Size of the filled dots
+            particleColor: "rgba(39, 40, 38, 1)", // Color of the dot
+            lineColor: "rgba(245, 178, 6, 1)", // Color of the lines
+            speed: 5, // Speed of particle movement
+            lineType: "solid" // Type of connecting lines: "solid", "dotted", "dashed", "dash-dotted"
+        });
+        particleSystem.start();
+    </script>
 ```
 
 ### Configuration Options
